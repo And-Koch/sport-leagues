@@ -27,14 +27,5 @@ input {
   border-radius: 15px;
   border: 1px solid gray;
 }
-@media (max-width: 480px) {
-  .searchBox input {
-    width: 100%;
-  }
-  }
-  @media (max-width: 300px) {
-  .searchBox input{
-    width: 90%;
-  }
-  }
+
 </style>

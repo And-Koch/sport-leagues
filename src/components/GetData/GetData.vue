@@ -69,4 +69,10 @@ function updateSearch(v) { search.value = v; }
   justify-content: space-around;
   align-items: center;
 }
+@media (max-width: 780px) {
+  .searchBox{
+    display: flex;
+    flex-direction: column;
+  }
+}
 </style>

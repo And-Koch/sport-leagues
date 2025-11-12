@@ -39,7 +39,8 @@ const props = defineProps({
   padding: 15px;
   cursor: pointer;
 }
-@media (max-width: 768px) {
+@media (max-width: 780px) {
+
   .leagueCard h1 {
     font-size: 1.1rem;
   }
@@ -51,22 +52,16 @@ const props = defineProps({
   }
 }
 @media (max-width: 480px) {
-  .searchBox input,
-  .searchBox select {
-    width: 100%;
-  }
   .leaguesBox {
     grid-template-columns: 1fr;
   }
   .leagueCard {
+    margin: 10px;
     padding: 12px;
   }
 }
 @media (max-width: 300px) {
-   .searchBox input,
-  .searchBox select {
-    width: 100%;
-  }
+ 
     .leaguesBox {
     grid-template-columns: 1fr;
     width: 270px;
