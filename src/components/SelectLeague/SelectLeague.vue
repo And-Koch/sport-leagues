@@ -9,6 +9,7 @@ const emit = defineEmits(["update-sport"]);
   <select
     :value="props.selectedSport"
     @change="emit('update-sport', $event.target.value)"
+    class="selectBox"
   >
     <option value="All">All</option>
     <option value="Soccer">Soccer</option>
@@ -20,5 +21,15 @@ const emit = defineEmits(["update-sport"]);
 </template>
 
 <style scoped>
-
+@media (max-width: 480px) {
+  .selectBox {
+    width: 100%;
+  }
+  }
+  @media (max-width: 300px) {
+  .selectBox {
+    width: 50%;
+    margin-right: 15px;
+  }
+  }
 </style>

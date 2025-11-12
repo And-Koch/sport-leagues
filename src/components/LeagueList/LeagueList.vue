@@ -29,11 +29,51 @@ const props = defineProps({
   
 }
 .leagueCard {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
   width: 500px;
   height: 200px;
   border-radius: 15px;
   box-shadow: 0 4px 8px rgba(0,0,0,0.1);
   padding: 15px;
   cursor: pointer;
+}
+@media (max-width: 768px) {
+  .leagueCard h1 {
+    font-size: 1.1rem;
+  }
+  .leagueCard h2 {
+    font-size: 0.95rem;
+  }
+  .leagueCard h3 {
+    font-size: 0.85rem;
+  }
+}
+@media (max-width: 480px) {
+  .searchBox input,
+  .searchBox select {
+    width: 100%;
+  }
+  .leaguesBox {
+    grid-template-columns: 1fr;
+  }
+  .leagueCard {
+    padding: 12px;
+  }
+}
+@media (max-width: 300px) {
+   .searchBox input,
+  .searchBox select {
+    width: 100%;
+  }
+    .leaguesBox {
+    grid-template-columns: 1fr;
+    width: 270px;
+    margin: auto;
+  }
+  .leagueCard {
+    padding: 12px;
+  }
 }
 </style>

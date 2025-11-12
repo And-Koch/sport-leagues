@@ -13,9 +13,7 @@ const selectedSport = ref("All");
 
 onMounted(async () => {
   try {
-    const res = await axios.get(
-      "https://www.thesportsdb.com/api/v1/json/3/all_leagues.php"
-    );
+    const res = await axios.get("https://www.thesportsdb.com/api/v1/json/3/all_leagues.php");
     leagues.value = res.data.leagues;
   } catch (e) {
     console.error("Error loading leagues:", e);
@@ -23,7 +21,7 @@ onMounted(async () => {
 });
 
 async function getBadges(idLeague) {
-  const cacheKey = `league_badge_${idLeague}`;
+  const cacheKey = `league_badge_${idLeague}`; 
   const cached = localStorage.getItem(cacheKey);
   if (cached) {
     badgeUrl.value = JSON.parse(cached);
@@ -45,31 +43,23 @@ const filteredFinal = computed(() =>
   leagues.value.filter((league) => {
     const sportMatch =
       selectedSport.value === "All" || league.strSport === selectedSport.value;
-    const nameMatch =
-      !search.value.toLowerCase().trim() ||
-      league.strLeague
-        .toLowerCase()
-        .startsWith(search.value.toLowerCase().trim());
+    const nameMatch = !search.value.toLowerCase().trim() || league.strLeague.toLowerCase().startsWith(search.value.toLowerCase().trim());
     return sportMatch && nameMatch;
   })
 );
 
-function updateSearch(v) {
-  search.value = v;
-}
+function updateSearch(v) { search.value = v; }
 </script>
 
 <template>
   <div class="searchBox">
     <SearchBox :search="search" @update-search="updateSearch" />
-    <SelectLeague
-      :selectedSport="selectedSport"
-      @update-sport="selectedSport = $event"
-    />
+    <SelectLeague :selectedSport="selectedSport" @update-sport="selectedSport = $event" />
   </div>
 
   <LeagueList :filteredLeagues="filteredFinal" @select-league="getBadges" />
 
+ 
   <LeagueBadges :url="badgeUrl" @close="badgeUrl = null" />
 </template>
 

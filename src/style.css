@@ -1,0 +1,101 @@
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Inter", sans-serif;
+  background: #fafafa;
+  color: #222;
+}
+
+/* === CONTAINERS === */
+/* .searchBox {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin: 20px auto;
+  width: 90%;
+}
+
+.leaguesBox {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 20px;
+  padding: 20px;
+  justify-items: center;
+}
+
+.leagueCard {
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  padding: 15px;
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+  width: 100%;
+  max-width: 480px;
+}
+
+.leagueCard:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.15);
+}
+
+/* === MODAL RESPONSIVE === */
+/* .cardContent {
+  width: 90%;
+  max-width: 400px;
+  padding: 15px;
+}
+
+.cardImage {
+  width: 100%;
+  height: auto;
+  max-width: 300px;
+}
+
+/* === SEARCH INPUT === */
+/* .searchBox input,
+.searchBox select {
+  padding: 8px 12px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  font-size: 1rem;
+  width: 200px;
+} */ 
+
+/* === RESPONSIVE MEDIA QUERIES === */
+/* @media (max-width: 768px) {
+  .leagueCard h1 {
+    font-size: 1.1rem;
+  }
+  .leagueCard h2 {
+    font-size: 0.95rem;
+  }
+  .leagueCard h3 {
+    font-size: 0.85rem;
+  }
+} */
+
+/* @media (max-width: 480px) {
+  .searchBox input,
+  .searchBox select {
+    width: 100%;
+  }
+  .leaguesBox {
+    grid-template-columns: 1fr;
+  }
+  .leagueCard {
+    padding: 12px;
+  }
+  .cardContent {
+    width: 95%;
+    max-width: 340px;
+  }
+} */

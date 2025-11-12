@@ -17,7 +17,7 @@ function open() {
 function close() {
   show.value = false;
   document.body.style.overflow = "";
-  emit("close"); 
+  emit("close");
 }
 
 watch(
@@ -51,7 +51,6 @@ onBeforeUnmount(() => window.removeEventListener("keydown", onKey));
       >
         <button class="cardClose" @click="close">×</button>
 
-        
         <img :src="props.url" alt="league badge" class="cardImage" />
       </div>
     </div>
@@ -70,10 +69,13 @@ onBeforeUnmount(() => window.removeEventListener("keydown", onKey));
   z-index: 9999;
   opacity: 0;
   transition: opacity 0.3s ease;
-  
 }
-.fadeIn { opacity: 1; }
-.fadeOut { opacity: 0; }
+.fadeIn {
+  opacity: 1;
+}
+.fadeOut {
+  opacity: 0;
+}
 
 .cardContent {
   position: relative;
@@ -89,10 +91,15 @@ onBeforeUnmount(() => window.removeEventListener("keydown", onKey));
   transform: translateY(20px);
   opacity: 0;
   transition: 0.3s ease;
-  
 }
-.slideUp { transform: translateY(0); opacity: 1; }
-.slideDown { transform: translateY(20px); opacity: 0; }
+.slideUp {
+  transform: translateY(0);
+  opacity: 1;
+}
+.slideDown {
+  transform: translateY(20px);
+  opacity: 0;
+}
 
 .cardClose {
   position: absolute;
@@ -107,12 +114,28 @@ onBeforeUnmount(() => window.removeEventListener("keydown", onKey));
   cursor: pointer;
   transition: background 0.2s ease;
 }
-.cardClose:hover { background: #ff2f2f; }
+.cardClose:hover {
+  background: #ff2f2f;
+}
 
 .cardImage {
   width: 300px;
   height: auto;
   border-radius: 10px;
-  box-shadow: 0 0 20px rgba(255,255,255,0.15);
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.15);
+}
+@media (max-width: 480px) {
+  .cardContent {
+    width: 95%;
+    max-width: 340px;
+  }
+}
+@media (max-width: 300px) {
+  .cardContent {
+    width: 90%;
+  }
+  .cardImage{
+    width: 200px;
+  }
 }
 </style>
